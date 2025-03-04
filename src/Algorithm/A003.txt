@@ -35,3 +35,4 @@ public class Main {
 // Main클래스에서 main 메서드를 실행
 //Solution 클래스의 인스턴스 sol을 생성
 //solution 메서드를 호출하여 결과를 출력
+
