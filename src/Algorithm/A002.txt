@@ -1,0 +1,55 @@
+002 두 수의 곱
+
+문제
+정수 num1, num2 가 매개변수 주어집니다
+num1 과 num2를 곱한 값을 return 하도록 solution 함수를 완성해주세요
+
+https://school.programmers.co.kr/learn/courses/30/lessons/120804
+
+
+답
+class Solution {
+    public int solution(int num1, int num2) {
+        return num1 * num2 ;
+    }
+}
+
+//자바 컴파일을 위한 실행예제
+public class Main {
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        System.out.println(sol.solution(3,4)); //출력:12
+        System.out.println(sol.solution(7,2)); //출력:14
+    }
+}
+
+
+
+
+
+
+해설
+클래스정의
+Solution 클래스를 정의
+
+메서드 선언  solution 메서드는 num1과 num2를 매개변수로 받음
+
+Solution sol = new Solution();
+sol은  Solution 클래스의 인스턴스(객체)입니다
+
+sol의 역할
+1.클래스 인스턴스의 생성
+Solution 클래스에 정의된 solution 메서드를 호출하려면,
+먼저 Solution 객체를 만들어야합니다
+new Solution(); 은  Solution 클래스의 새로운 객체를 생성합니다
+sol은 이 객체를 참조하는 변수
+
+2.메서드 호출
+sol.solution(3,4);
+->  sol 객체를 통해 Solution 클래스의 solution 메서드를 호출하고
+결과를 출력
+
+
+Solution sol = new Solution();
+Solution 클래스의 새로운 객체를 생성하고
+이를 sol 이라는 변수에 저장
