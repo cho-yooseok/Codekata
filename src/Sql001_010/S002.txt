@@ -1,0 +1,42 @@
+SQL002 역순 정렬하기
+
+문제
+ANIMAL_INS 테이블은 동물 보호소에 들어온 동물의 정보를 담은 테이블
+ANIMAL_ID
+ANIMAL_TYPE         생물종
+DATETIME            보호 시작일
+INTAKE_CONDITION    보호 시작 시 상태
+NAME                이름
+SEX_UPON_INTAKE     성별 및 중성화 여부
+
+
+동물 보호소에 들어온 모든 동물의 이름과 보호 시작일을
+SQL 문을 작성해주세요
+이때 결과는
+ANIMAL_ID 역순으로 보여주세요
+
+예시
+NAME	DATETIME
+Rocky	2016-06-07 09:17:00
+Shelly	2015-01-29 15:01:00
+Benji	2016-04-19 13:28:00
+Jackie	2016-01-03 16:25:00
+*Sam	2016-03-13 11:17:00
+
+
+답
+SELECT NAME, EATETIME
+FROM ANIMAL_INS
+ORDER BY ANIMAL_ID DESC;
+
+
+해설
+이 쿼리는 ANIMAL_INS 테이블에서 NAME 과 DATETIME 컬럼을 선택하고,
+ANIMAL_ID를 기준으로 내림차순 정렬하여 결과를 반환
+
+SELECT NAME, DATETIME       NAME과 DATETIME 컬럼을 선택
+FROM ANIMAL_INS             ANIMAL_INS 테이블에서 데이터를 가져옴
+ORDER BY ANIMAL_ID DESC     ANIMAL_ID를 기준으로 내림차순으로정렬
+
+이 쿼리를 실행하면 동물의 이름과 보호 시작일이
+ANIMAL_ID 역순으로 정렬된 결과를 얻을 수 있음
