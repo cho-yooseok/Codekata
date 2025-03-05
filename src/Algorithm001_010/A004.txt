@@ -1,4 +1,5 @@
 004 나이출력
+https://school.programmers.co.kr/learn/courses/30/lessons/120820
 
 문제
 2022년 기준 선생님의 나이 age가 주어질 때.

@@ -1,5 +1,5 @@
 005 숫자 비교하기
-
+https://school.programmers.co.kr/learn/courses/30/lessons/120807
 문제
 정수 num1과 num2가 매개변수로 주어짐
 두 수가 같으면 1
