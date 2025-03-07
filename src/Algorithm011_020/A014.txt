@@ -1,1 +1,39 @@
-014
+014 약수의 합
+
+https://school.programmers.co.kr/learn/courses/30/lessons/12928
+
+
+정수 n을 입력받아 n의 약수를 모두 더한 값을 리턴하는 함수, solution을 완성해주세요.
+
+제한 사항
+n은 0 이상 3000이하인 정수입니다.
+
+답
+class Solution {
+    public int solution(int n) {
+            int sum = 0;  //약수의 합을 저장할 변수
+
+            for(int i = 1; i <=n ; i ++)  {  //1부터 1까지 반복
+                if (n % i ==0)  { //i가 n의 약수라면 (나머지가 0이면)
+                    sum += i;   //i를 sum에 더함
+                }
+            }
+
+            return sum;  //최종 약수의 합
+    }
+}
+
+
+/*
+코드해설
+변수 선언
+sum 변수를 만들어서 약수들의 합을 저장할 준비를 한다
+
+반복문 for  활용
+i를 1부터 n 까지 증가시키면서 i가 n의 약수인지 확인한다
+if (n % i == 0)    ->   나머지가 0이면 i는  n의 약수이므로  sum에 더한다
+
+반환값 return sum
+모든 약수를 더한 후 sum 값에 반환
+
+*/
