@@ -94,5 +94,103 @@ j++ 는 "이 위치에 넣고 나서 다음 위치로 가!" 라는 의미
  */
 
 public class A029 {
+    public int[] solution(int[] arr) {
+        // 배열에 숫자가 딱 한개라면 [-1] 반환
+        if (arr.length == 1) {
+            return new int[]{-1};
+        }
 
+        // 가장 작은 숫자의 위치 찾기
+        // 처음엔 첫 번째 숫자가 가장 작다고 가정
+        int smallestIndex = 0;
+
+        // 배열의 모든 숫자 확인하면서 가장 작은 숫자 찾기
+        for (int i = 0; i < arr.length; i++) {
+            // 만약 현재 숫자가 지금까지 찾은 가장 작은 숫자보다 작다면
+            // 가장 작은 숫자의 위치 변경
+            if (arr[i] < arr[smallestIndex]) {
+                smallestIndex = i;
+            }
+        }
+
+        // 가장 작은 숫자 제외한 새 배열 만들기
+        // 원래 배열보다 1개 적은 크기의 배열 생성
+        int[] result = new int[arr.length - 1];
+
+        // 가장 작은 숫자 빼고 나머지 숫자들 새 배열에 복사
+        // 새 배열의 현재 위치를 추적할 변수
+        int resultIndex = 0;
+
+        // 원래 배열의 모든 숫자 확인
+        for (int i = 0; i < arr.length; i++) {
+            // 현재 위치가 가장 작은 숫자 위치와 다르다면
+            if (i != smallestIndex) {
+                // 현재 숫자를 새 배열에 넣기
+                result[resultIndex] = arr[i];
+                // 새 배열의 다음 위치로 이동
+                resultIndex++;
+            }
+        }
+
+        // 가장 작은 숫자 제외한 새 배열 반환
+        return result;
+
+    }
+
+    // 코드 테스트를 위한 메인 메서드
+    public static void main(String[] args) {
+        A029 solution = new A029();
+
+        // 테스트 케이스 1 : 여러 숫자가 있는 배열
+        int[] test1 = {4, 3, 2, 1};
+        int[] result1 = solution.solution(test1);
+        System.out.print("테스트 1 결과: ");
+        for (int num : result1) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+
+    }
 }
+
+//  System.out.print(num + " ");   에서 " "   따옴표는 숫자들 사이에 공백을 주기 위해서
+
+/*
+for (int num : result2) 의미 :
+    result2 배열의 모든 숫자를 순서대로 반복
+    각 숫자를 num이라는 변수에 순서대로 담아서 처리
+    배열의 첫 번째 숫자부터 마지막 숫자까지 자동으로 반복
+
+
+    result[resultindex] = arr[i];
+    을 활용한 쉬운 예시
+
+class A029 {
+    public static void main(String[] args) {
+        // 음료수 배열 생성 (초기재고)
+        String[] drinks = {"콜라" , "사이다", "환타", "제로", "우롱차"};
+
+       // 품절된 음료 위치 찾기
+       int soldOutIndex = 2; // 환타 품절
+
+       // 새 재고 배열 만들기
+       String[] newDrinks = new String[drinks.length -1];
+
+           // 품절 음료 제외하고 재고 배열에 담기
+           int newIndex = 0;
+           for (int i =0; i < drinks.length; i++) {
+            if (i != soldOutIndex) {
+                newDrinks[newIndex] = drinks[i];
+                newIndex++
+            }
+        }
+
+        // 새 재고 출력
+        System.out.println("새로운 자판기 재고:");
+        for (String drink : newDrinks) {
+            System.out.println(drinks);
+        }
+    }
+}
+
+ */
