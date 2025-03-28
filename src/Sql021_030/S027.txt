@@ -1,0 +1,51 @@
+S027 진료과별 총 예약 횟수 출력하기
+
+// https://school.programmers.co.kr/learn/courses/30/lessons/132202
+
+2022년 5월에 예약한 환자 수를 진료과 코드별로 조회
+결과는 예약한 환자 수 오름차순 -> 진료과 코드 오름차순으로 정렬
+
+답
+SELECT
+    MCDP_CD AS "진료과 코드",
+    COUNT(*) AS "5월예약건수"
+FROM APPOINTMENT
+WHERE DATE_FORMAT(APNT_YMD, '%Y-%m') = '2022-05'
+GROUP BY MCDP_CD
+ORDER BY COUNT(*) ASC, MCDP_CD ASC;
+
+ 해설
+ SELECT절 : 원하는 열을 선택
+ SELECT
+    MCDP_CD AS "진료과 코드",
+    COUNT(*) AS "5월 예약건수"
+
+    MCDP_CD : 진료과 코드를 가져옵니다
+    COUNT(*) : 각 진료과의 예약된 환자 수를 셉니다
+    AS : 결과에 나오는 컬럼 이름을 바꿉니다
+    MCDP_CD -> "진료과 코드"
+    COUNT(*) -> "5월예약건수"
+
+WHERE 절 : 조건을 걸어 원하는 데이터만 필터링
+
+WHERE DATE_FORMAT(APNT_YMD, '%Y-%m') = '2022-05'
+    DATE_FORMAT : 날짜를 특정 형식으로 변환하는 MySQL 함수입니다
+        APNT_YMD에서 연-월YYYY-MM 만 추출합니다 '%Y-%m'
+        '2022-05' :2022년 5월에 해당하는 데이터만 가져옵니다
+
+
+GROUP BY 절 : 그룹화(진료과 코드 기준)
+    GROUP BY MCDP_CD
+
+    GROUP BY 는 중복을 합쳐서 그룹화 하는 역할을 합니다
+    여기서는 진료과 코드(MCDP_CD) 기준으로 같은 진료과 데이터를 하나로 묶습니다
+    각 진료과마다 예약된 환자 수를 세게 됩니다
+
+ORDER BY 절 : 정렬(두 개의 기준)
+
+ORDER BY COUNT(*) ASC, MCDP_CD ASC;
+
+정렬기준을 두 가지로 설정했습니다
+1. 첫 번째 기준 : COUNT(*) ASC -> 예약 건수 오름차순
+2. 두 번째 기준 : MCDP_CD ASC -> 예약 건수가 같을 때 진료과 코드 오름차순
+

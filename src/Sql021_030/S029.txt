@@ -1,0 +1,11 @@
+S029 인기 있는 아이스크림
+
+// https://school.programmers.co.kr/learn/courses/30/lessons/133024
+
+답
+SELECT FLAVOR -- 아이스크림 맛만 선택해서 보여줘
+FROM FIRST_HALF -- 상반기 주문 데이터에서
+ORDER BY
+    TOTAL_ORDER DESC, -- 1. 판매량 많은 순서대로
+    SHIPMENT_ID ASC;  -- 2. 판매량 같으면 출하번호 작은 순서대로
+

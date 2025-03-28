@@ -1,0 +1,59 @@
+S023 중성화 여부 파악하기
+
+// https://school.programmers.co.kr/learn/courses/30/lessons/59409
+
+SELECT
+        ANIMAL_ID,
+        NAME,
+        CASE
+            WHEN SEX_UPON_INTAKE LIKE '%Neutered' OR SEX_UPON_INTAKE LIKE 'Spayed%'
+            THEN '0'
+            ELSE 'X'
+        END AS 중성화
+FROM ANIMAL_INS
+ORDER BY ANIMAL_ID;
+
+
+해설
+SELECT 구문 : 필요한 열(컬럼) 선택하기
+SELECT
+    ANIMAL_ID,
+    NAME,
+
+    ANIMAL_ID 동물의 아이디
+    NEME 동물의 이름
+    위 두 개 의 열을 선택합니다
+
+
+CASE 문 : 조건에 따라 값 변환하기
+
+CASE
+    WHEN SEX_UPON_INTAKE LIKE 'Neutered%' OR SEX_UPON_INTAKE LIKE '%Spayed%'
+    THEN 'O'
+    ELSE 'X'
+END AS 중성화
+
+CASE 문은 여러 조건을 검사하고, 해당하는 값을 반환하는 조건문입니다
+여기서는 SEX_UPON_INTAKE 열에 Neutered(중성화된 수컷) 또는 Spayed(중성화된 암컷)라는 단어가 포함되어 있는지 확인합니다
+
+LIKE 연산자
+LIKE는 특정 문자열이 포함되어 있는지 확인할 때 사용합니다
+% 는 '와일드카드'  로 아무 문자나 0개 이상을 의미합니다
+
+WHEN 절
+WHEN 조건이 참TRUE일때 실행되는 부분입니다
+
+WHEN SEX_UPON_INTAKE LIKE '%Neutered%' OR SEX_UPON_INTAKE LIKE '%Spayed%'
+
+OR 는 둘 중 하나라도 만족하면 참 TURE 입니다
+
+만약 SEX_UPON_INTAKE 열에 Neutered 또는 Spayed 가 포함되어 있다면 -> '0'를 반환
+
+그렇지 않다면 -> 'x'를 반환
+
+AS 중성화  : 별칭 alias 사용
+AS 중성화는 결과 컬럼의 이름을 '중성화'로 변경합니다
+
+
+
+

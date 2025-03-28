@@ -1,0 +1,60 @@
+S24 카테고리 별 상품 개수 구하기
+
+// https://school.programmers.co.kr/learn/courses/30/lessons/131529
+
+답
+
+SELECT
+    LEFT(PRODUCT_CODE, 2) AS CATEGORY,
+    COUNT(*) AS PRODUCTS
+FROM PRODUCT
+GROUP BY LEFT(PRODUCT_CODE, 2)
+ORDER BY CATEGORY;
+
+
+문제 이해하기
+목표는 상품코드의 앞 2자리(카테고리 코드)를 기준으로
+
+1. 각 카테고리에 속하는 상품의 개수를 구하고,
+2. 카테고리 코드를 기준으로 오름차순으로 정렬하는것
+
+
+SELECT : 필요한 열 선택하기
+
+SELECT
+    LEFT(PRODUCT_CODE, 2) AS CATEGORY,
+    COUNT(*) AS PRODUCTS
+
+    LEFT(PRODUCT_CODE, 2)
+    LEFT() 함수는 문자열의 왼쪽에서부터 N개의 문자를 추출합니다
+    LEFT(PRODUCT_CODE, 2)는 상품 코드의 앞 2자리를 의미합니다
+
+
+AS CATEGORY
+결과에 새로운이름(별칭)을 부여합니다
+LEFT(PRODUCT_CODE, 2) -> CATEGORY로 출력
+
+COUNT(*)
+각 카테고리별 상품의 개수를 계산합니다
+
+AS PRODUCTS
+상품 개수를 PRODUCTS 라는 이름으로 출력합니다
+
+GROUP BY
+그룹화하기
+
+GROUP BY LEFT(PRODUCT_CODE, 2)
+GROUP BY 는 같은 값을 가진 행들을 그룹으로 묶습니다
+여기서는 LEFT(PRODUCT_CODE, 2)를 기준으로 카테고리별로 그룹화합니다
+
+각 그룹 내에서 COUNT(*)로 상품 수를 계산합니다
+
+ORDER BY : 정렬하기
+
+ORDER BY CATEGORY;
+
+결과를 CATEGORY 기준으로 오름차순(기본정렬) 으로 정렬합니다
+
+오름차순 예
+A1 -> C3 -> K1
+

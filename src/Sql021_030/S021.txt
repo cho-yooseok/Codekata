@@ -1,0 +1,12 @@
+S021 이름이 없는 동물의 아이디
+
+// https://school.programmers.co.kr/learn/courses/30/lessons/59039
+
+이 문제는 sql에서 NULL 값을 가진 NAME 컬럼의 ANIMAL_ID를 조회하는 쿼리를 작성하는것
+
+답
+SELECT ANIMAL_ID
+FROM ANIMAL_INS
+WHERE NAME IS NULL
+ORDER BY ANIMAL_ID;
+
