@@ -1,1 +1,32 @@
-S030
+S030 자동차 종류 별 특정 옵션이 포함된 자동차 수 구하기
+
+// https://school.programmers.co.kr/learn/courses/30/lessons/151137
+
+답
+-- 1. 원하는 데이터 선택하기
+-- CAR_TYPE(자동차 종류)과 해당 차량 수를 CARS 라는 이름으로 표시
+SELECT
+    CAR_TYPE,
+    COUNT(*) AS CARS -- 각 그룹의 레코드 수를 세어 CARS 컬럼으로 표시
+FROM
+    CAR_RENTAL_COMPANY_CAR -- 자동차 대여 회사의 차량 정보 테이블
+-- 2. 조건 필터링
+-- 옵션에 '통풍시트', '열선시트', '가죽시트' 중 하나라도 포함된 차량만선택
+WHERE
+    OPTIONS LIKE '%통풍시트' OR
+    OPTIONS LIKE '%열선시트' OR
+    OPTIONS LIKE '%가죽시트'
+-- 3. 그룹화
+-- 자동차 종류(CAR_TYPE)별로 그룹 생성
+GROUP BY
+    CAR_TYPE
+-- 4. 정렬
+-- 자동차 종류를 알파벳/가나다 순으로 오름차순 정렬
+ORDER BY
+    CAR_TYPE ASC;
+
+
+
+우리가 가진 자동차 목록에서 특별한 시트(통풍시트/열선시트/가죽시트)가
+달린 차량만 찾아야한다
+그리고 차종별로 몇 대씩 있는지 세어서 보여줘야 한다
