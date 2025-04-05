@@ -97,3 +97,33 @@ arr[0]. length 열(column)의 수 = 3
 
 
  */
+
+
+
+/*
+1. terminal
+
+2.
+git init
+initialize 초기화하다
+
+3.
+git add .
+전부다 올리기
+
+4.
+git status
+상태를 알려주는 명령어 (필수는 아니다)
+
+5.
+git commit -m "first commit"
+
+6.
+git remote add origin git@github주소~
+
+7.
+git remote -v
+연결고리 확인
+선택사항 (어느 주소에 연결되었는지 확인한다)
+
+ */
