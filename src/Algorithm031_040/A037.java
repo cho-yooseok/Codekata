@@ -164,4 +164,27 @@ git commit -m "파일 만들었음"
 실험용
 실험용
 실험용
+
+
+새로운 리포지토리를 만들어주자
+repository name*
+이 아래칸에 리포지토리이름 만들어주기
+group-project is available
+
+public
+
+팀원 초대하기
+invite collaborators
+
+초록버튼
+Add people
+
+팀원들을 초대한다
+
+pending invite (보류중인 초대   아직 초대에 응하지 않음)
+(이메일을 통해 수락할 수 있다.)
+
+프로젝트 초기세팅
+
+
  */
