@@ -126,4 +126,38 @@ git remote -v
 연결고리 확인
 선택사항 (어느 주소에 연결되었는지 확인한다)
 
+
+
+깃을 처음 설치했다면
+폴더   쉬프트우클릭 -> powershell 창 열기
+
+사용자 등록을 해야한다
+git config --global user.email "홍길동@naver.com"
+git config --global user.name "홍길동"
+차례로 입력
+
+뉴터미널
+git init   (깃이 여러분의 작업폴더 감시를 시작한다)
+
+깃을 이용하여 백업하는 방법
+git add 파일명
+
+
+git branch 브랜치명
+깃 브랜치 생성
+
+
+git switch 브랜치명
+브랜치로 이동
+
++ git status
+git add .
+git commit -m "파일 만들었음"
+
+..
+
+
+
+
+
  */
