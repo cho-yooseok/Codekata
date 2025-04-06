@@ -187,4 +187,17 @@ pending invite (보류중인 초대   아직 초대에 응하지 않음)
 프로젝트 초기세팅
 .
 
+마스터 브랜치는 함부로 바꾸면 안된다
+마스터 브랜치 함부로 코드를 push 할 수 없게 만들어야한다
+
+일단 develop branch로 작업하게 한다
+
+마스터 브랜치 보호하기 위해서
+
+your master branch isn't protected
+protect this branch
+
+...
+
+
  */
