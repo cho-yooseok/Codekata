@@ -96,3 +96,4 @@ class A040 {
         System.out.println("입력값: 100000000, 결과: " + result3);
     }
 }
+ //
