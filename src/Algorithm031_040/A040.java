@@ -97,3 +97,12 @@ class A040 {
     }
 }
  ////
+
+/*
+
+Add Dependencies
+Lombok
+Spring Web
+Spring Data Jpa
+My SQL Driver
+ */
