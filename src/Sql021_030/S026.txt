@@ -1,0 +1,36 @@
+S026 입양 시각 구하기(1)
+
+// https://school.programmers.co.kr/learn/courses/30/lessons/59412
+
+답
+
+보호소에서 09:00부터 19:59까지 각 시간대별로 입양된 동물의 수를 조회하는
+sql문은 다음과 같습니다
+
+SELECT
+    HOUR(DATETIME) AS HOUR,
+    COUNT(*) AS COUNT
+FROM ANIMAL_OUTS
+WHERE HOUR(DATETIME) BETWEEN 9 AND 19
+GROUP BY HOUR
+ORDER BY HOUR;
+
+해설
+HOUR(DATETIME)
+DATETIME 컬럼에서 시간(Hour)만 추출합니다
+예 : 2024-03-27 13:45:00 -> 13
+
+COUNT(*) AS COUNT
+각 시간대의 입양된 동물 수를 세고, COUNT라는 이름으로 출력합니다
+
+WHERE
+HOUR(DATETIME) BETWEEN 9 AND 19 는
+09:00부터 19:59까지의 데이터만 선택합니다
+BETWEEN 은 포함 범위를 의미합니다 (9 <= HOUR <= 19)
+
+GROUP BY HOUR
+각 시간(HOUR)별로 그룹화합니다
+그룹화된 각 시간대에 대해 COUNT(*) 로 개수를 셉니다
+
+ORDER BY HOUR
+시간대 순으로 오름차순 정렬합니다

@@ -1,0 +1,87 @@
+SQL 007 아픈 동물 찾기
+
+https://school.programmers.co.kr/learn/courses/30/lessons/59036
+
+ANIMAL_INS 테이블은 동물 보호소에 들어온 동물의 정보를 담은 테이블입니다.
+ ANIMAL_INS 테이블 구조는 다음과 같으며,
+  ANIMAL_ID, ANIMAL_TYPE, DATETIME, INTAKE_CONDITION, NAME, SEX_UPON_INTAKE는
+  각각 동물의 아이디, 생물 종, 보호 시작일, 보호 시작 시 상태, 이름, 성별 및 중성화 여부를 나타냅니다.
+
+NAME	TYPE	NULLABLE
+ANIMAL_ID	VARCHAR(N)	FALSE
+ANIMAL_TYPE	VARCHAR(N)	FALSE
+DATETIME	DATETIME	FALSE
+INTAKE_CONDITION	VARCHAR(N)	FALSE
+NAME	VARCHAR(N)	TRUE
+SEX_UPON_INTAKE	VARCHAR(N)	FALSE
+동물 보호소에 들어온 동물 중
+아픈 동물1의 아이디와 이름을 조회하는 SQL 문을 작성해주세요.
+ 이때 결과는 아이디 순으로 조회해주세요.
+
+예시
+예를 들어 ANIMAL_INS 테이블이 다음과 같다면
+
+ANIMAL_ID	ANIMAL_TYPE	DATETIME	INTAKE_CONDITION	NAME	SEX_UPON_INTAKE
+A365172	Dog	2014-08-26 12:53:00	Normal	Diablo	Neutered Male
+A367012	Dog	2015-09-16 09:06:00	Sick	Miller	Neutered Male
+A365302	Dog	2017-01-08 16:34:00	Aged	Minnie	Spayed Female
+A381217	Dog	2017-07-08 09:41:00	Sick	Cherokee	Neutered Male
+이 중 아픈 동물은 Miller와 Cherokee입니다. 따라서 SQL문을 실행하면 다음과 같이 나와야 합니다.
+
+ANIMAL_ID	NAME
+A367012	Miller
+A381217	Cherokee
+
+문제 요약
+ANIMAL_INS 테이블에서 보호 시작 시 상태 INTAKE_CONDITION 가  SICK 인 동물의 ANIMAL_ID와
+NAME을 조회하는 SQL쿼리를 작성하시오
+결과는 ANIMAL_ID를 기준으로 오름차순 정렬하세요
+
+
+답
+SELECT ANIMAL_ID NAME
+FROM ANIMAL_INS
+WHERE INTAKE_CONDITION = 'SICK'
+ORDER BY ANIMAL_ID ASC;
+
+쿼리해설
+SELECT ANIMAL_ID, NAME
+ANIMAL_ID 와 NAME 열을 선택
+
+FROM ANIMAL_INS
+ANIMAL_INS 테이블에서 데이터를 가져옴
+
+WHERE INTAKE_CONDITION = 'SICK'
+INTAKE_CONDITION 열의 값이 SICK 인 행만 필터링
+즉 아픈동물만 선택한다
+
+ORDER BY ANIMAL_OD ASC
+결과를 ANIMAL_ID를 기준으로 오름차순 정렬
+ASC는 생략 가능
+
+WHERE
+특정 조건을 만족하는 행만 선택
+여기서는 INTAKE_CONDITION 이 SICK인 행만 선택
+
+ORDER BY
+결과를 특정 열을 기준으로 정렬
+여기서는 ANIMAL_ID를 기준으로 오름차순 정렬
+
+ASC
+오른차순 정렬을 의미
+생략해도 기본값으로 적용
+
+
+SQL에서 문자열 값을 비교하거나 사용할때는 작은따옴표 ' '를  꼭 붙여야 한다
+SQL은 문자열 값을 작은 따옴표로 감싸야 인식하기 때문
+
+예시
+WHERE INTAKE_CONDITION = 'SICK'
+
+SICK(따옴표 없이) 은 SQL에서 열 이름이나 키워드로 해석될수 있음
+따라서 오류가 발생할 수 잇음
+
+정리
+문자열 값은 반드시 작은따옴표''로 감싸야한다
+숫자 값은 따옴표 없이 사용 가능
+열 이름이나 키워드는 따옴표 없이 사용

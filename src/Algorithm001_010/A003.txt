@@ -1,0 +1,38 @@
+003 몫 구하기
+
+문제
+정수 num1, num2 가 매개변수로 주어질 때,  num1을 num2로 나눈 몫을
+return 하도록 solution 함수를 완성해 주세요
+제한사항
+0 < num1 ≤ 100
+0 < num2 ≤ 100
+
+https://school.programmers.co.kr/learn/courses/30/lessons/120805
+
+
+답
+class Solution {
+    public int solution(int num1, int num2) {
+
+        return num1/num2;
+    }
+}
+//  반환타입이 int 이므로 나눗셈의 결과가 소수점이하를 버린 정수값
+
+
+
+
+//실행코드까지
+public class Main {
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        System.out.println(sol.solution(10,3)); // 출력:3
+        System.out.println(sol.solution(7,2)); // 출력:3
+        System.out.println(sol.solution(100,25)); // 출력:4
+    }
+}
+
+// Main클래스에서 main 메서드를 실행
+//Solution 클래스의 인스턴스 sol을 생성
+//solution 메서드를 호출하여 결과를 출력
+

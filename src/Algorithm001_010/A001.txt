@@ -1,0 +1,55 @@
+001 두 수의 차
+
+문제
+정수 num1 과 num2가 주어질 때, num1에서 num2를 뺀 값을
+return 하도록 solution 함수를 완성해주세요
+
+https://school.programmers.co.kr/learn/courses/30/lessons/120803
+
+답
+class Solution {
+    public int solution(int num1, num2) {
+        return num1 - num2;
+    }
+}
+
+해설
+클래스 선언
+class Solution
+Solution 이라는 클래스 정의
+일반적으로 알고리즘 문제를 해결할 때 이렇게 클래스를 만들고,
+특정 메서드를 구현하여 해결
+
+메서드 선언
+public int solution(int num1, num2) {
+}
+solution  이라는 이름의 메서드 정의
+public 접근 제어자로 , 어디서든 접근할 있도록 설정되어있음
+int 이 메서드가 int 타입의 값을 반환함을 의미
+
+
+실행코드
+public class Main {
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        System.out.println(sol.solution(10,4)); //출력:6
+        System.out.println(sol.solution(7,15)); //출력:-8
+    }
+}
+
+
+
+자바컴파일러 통합버전
+class Solution {
+    public int solution(int num1, int num2) {
+        return num1 - num2;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        System.out.println(sol.solution(10,4)); //6
+        System.out.println(sol.solution(7,15)); //-8
+    }
+}

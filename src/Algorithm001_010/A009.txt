@@ -1,0 +1,32 @@
+009 짝수의 합
+https://school.programmers.co.kr/learn/courses/30/lessons/120831
+문제
+정수 n이 주어질 때, n이하의 짝수를 모두 더한 값을 return 하도록 solution 함수를 작성해주세요.
+
+제한사항
+0 < n ≤ 1000
+
+
+답
+
+class Solution {
+    public int solution(int n) {
+        int answer = 0;
+
+        // 2부터 n 까지 모든 짝수를 더함
+        for (int i = 2; i <= n ; i +=2) {
+            answer += i;
+        }
+
+        return answer;
+    }
+}
+
+
+/*
+answer 변수를 선언하고 0으로 초기화
+for 루프를 이용해 2부터 n까지 2씩 증가하는 반복문 실행
+짝수인 i 값을 answer에 누적하여 더함
+최종적으로 모든 짝수를 더한 값을 반환
+
+*/
